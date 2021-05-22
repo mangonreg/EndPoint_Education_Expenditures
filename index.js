@@ -6,6 +6,12 @@ var app = express();
 
 var path = require("path");
 
+//Para habilitar las peticiones externas
+
+var cors = require('cors');
+
+app.use(cors());
+
 // Creamos una variable dataBase para la gestion de bases de datosV2
 
 var dataBase = require("nedb");
