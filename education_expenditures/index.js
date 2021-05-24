@@ -168,6 +168,34 @@ var datos_EE =  [
         "education_expenditure_gdp":5.66,
         "education_expenditure_per_capita":2027.00
     },
+    
+    {
+        "year":2016,
+        "country":"Italy",
+        "education_expenditure_per_millions": 64936.1,
+        "education_expenditure_per_public_expenditure":7.81,
+        "education_expenditure_gdp":3.83,
+        "education_expenditure_per_capita":1071.00
+    },
+
+    {
+        "year":2015,
+        "country":"Italy",
+        "education_expenditure_per_millions": 67566.5,
+        "education_expenditure_per_public_expenditure":8.12,
+        "education_expenditure_gdp":4.08,
+        "education_expenditure_per_capita":1113.00
+    },
+
+    {
+        "year":2014,
+        "country":"Italy",
+        "education_expenditure_per_millions": 66320.8,
+        "education_expenditure_per_public_expenditure":8.01,
+        "education_expenditure_gdp":4.08,
+        "education_expenditure_per_capita":1091.00
+    },
+
     {
         "year":2005,
         "country":"Greece",
