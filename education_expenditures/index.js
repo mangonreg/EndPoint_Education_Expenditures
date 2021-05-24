@@ -65,12 +65,30 @@ var datos_EE =  [
     },
 
     {
+        "year":2014,
+        "country":"Spain",
+        "education_expenditure_per_millions": 44175.3 ,
+        "education_expenditure_per_public_expenditure":9.54,
+        "education_expenditure_gdp":4.28,
+        "education_expenditure_per_capita":975.00
+    },
+
+    {
         "year":2015,
         "country":"Germany",
         "education_expenditure_per_millions": 145413.4 ,
         "education_expenditure_per_public_expenditure":10.98,
         "education_expenditure_gdp":4.81,
         "education_expenditure_per_capita":1780.00
+    },
+
+    {
+        "year":2014,
+        "country":"Germany",
+        "education_expenditure_per_millions": 144054.7 ,
+        "education_expenditure_per_public_expenditure":11.15,
+        "education_expenditure_gdp":4.92,
+        "education_expenditure_per_capita":1779.00
     },
     
     {
@@ -90,6 +108,16 @@ var datos_EE =  [
         "education_expenditure_gdp":4.88,
         "education_expenditure_per_capita":847.00
     },
+
+    {
+        "year":2014,
+        "country":"Portugal",
+        "education_expenditure_per_millions": 8866.0 ,
+        "education_expenditure_per_public_expenditure":9.91,
+        "education_expenditure_gdp":5.12,
+        "education_expenditure_per_capita":853.00
+    },
+
     {
         "year":2016,
         "country":"Japan",
@@ -98,6 +126,16 @@ var datos_EE =  [
         "education_expenditure_gdp":3.19,
         "education_expenditure_per_capita":1118.00
     },
+
+    {
+        "year":2014,
+        "country":"Japan",
+        "education_expenditure_per_millions": 131503.0,
+        "education_expenditure_per_public_expenditure":9.09,
+        "education_expenditure_gdp":3.59,
+        "education_expenditure_per_capita":1034.00
+    },
+
     {
         "year":2014,
         "country":"USA",
@@ -113,6 +151,22 @@ var datos_EE =  [
         "education_expenditure_per_public_expenditure":13.83,
         "education_expenditure_gdp":5.49,
         "education_expenditure_per_capita":2035.00
+    },
+    {
+        "year":2015,
+        "country":"UK",
+        "education_expenditure_per_millions": 148352.5,
+        "education_expenditure_per_public_expenditure":13.84,
+        "education_expenditure_gdp":5.61,
+        "education_expenditure_per_capita":2279.00
+    },
+    {
+        "year":2014,
+        "country":"UK",
+        "education_expenditure_per_millions": 130922.5,
+        "education_expenditure_per_public_expenditure":13.67,
+        "education_expenditure_gdp":5.66,
+        "education_expenditure_per_capita":2027.00
     },
     {
         "year":2005,
