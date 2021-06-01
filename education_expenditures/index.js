@@ -23,9 +23,119 @@
 
 */
 
-module.exports.register = (app, BASE_API_PATH,dataBase) => {
+module.exports.register = (app, BASE_API_PATH,dataBase, dataBaseReduced) => {
 
     //Definimos los datos iniciales
+
+    var datos_EE_reduced =  [
+        {
+            "year": 2016,
+            "country":"Spain",
+            "education_expenditure_per_millions": 46882.8 ,
+            "education_expenditure_per_public_expenditure":9.97,
+            "education_expenditure_gdp":4.21,
+            "education_expenditure_per_capita":1009.00
+        },
+    
+        {
+            "year": 2016,
+            "country":"Germany",
+            "education_expenditure_per_millions": 150496.7,
+            "education_expenditure_per_public_expenditure":10.93,
+            "education_expenditure_gdp":4.8,
+            "education_expenditure_per_capita":1828.00
+        },
+    
+        {
+            "year":2015,
+            "country":"France",
+            "education_expenditure_per_millions": 120127.6 ,
+            "education_expenditure_per_public_expenditure":9.66,
+            "education_expenditure_gdp":5.46,
+            "education_expenditure_per_capita":1804.00
+        },
+    
+        {
+            "year":2015,
+            "country":"Spain",
+            "education_expenditure_per_millions": 46038.8 ,
+            "education_expenditure_per_public_expenditure":9.77,
+            "education_expenditure_gdp":4.27,
+            "education_expenditure_per_capita":992.00
+        },
+    
+        {
+            "year":2014,
+            "country":"Spain",
+            "education_expenditure_per_millions": 44175.3 ,
+            "education_expenditure_per_public_expenditure":9.54,
+            "education_expenditure_gdp":4.28,
+            "education_expenditure_per_capita":975.00
+        },
+    
+        {
+            "year":2015,
+            "country":"Germany",
+            "education_expenditure_per_millions": 145413.4 ,
+            "education_expenditure_per_public_expenditure":10.98,
+            "education_expenditure_gdp":4.81,
+            "education_expenditure_per_capita":1780.00
+        },
+
+        {
+            "year":2014,
+            "country":"France",
+            "education_expenditure_per_millions": 118496.3 ,
+            "education_expenditure_per_public_expenditure":9.66,
+            "education_expenditure_gdp":5.51,
+            "education_expenditure_per_capita":1787.00
+        },
+        
+        {
+            "year":2015,
+            "country":"Portugal",
+            "education_expenditure_per_millions": 8775.3 ,
+            "education_expenditure_per_public_expenditure":10.15,
+            "education_expenditure_gdp":4.88,
+            "education_expenditure_per_capita":847.00
+        },
+
+        {
+            "year":2016,
+            "country":"Japan",
+            "education_expenditure_per_millions": 141956.6,
+            "education_expenditure_per_public_expenditure":8.38,
+            "education_expenditure_gdp":3.19,
+            "education_expenditure_per_capita":1118.00
+        },
+    
+        {
+            "year":2014,
+            "country":"USA",
+            "education_expenditure_per_millions": 654617.3,
+            "education_expenditure_per_public_expenditure":13.40,
+            "education_expenditure_gdp":4.96,
+            "education_expenditure_per_capita":2055.00
+        },
+        {
+            "year":2016,
+            "country":"UK",
+            "education_expenditure_per_millions": 133559.4,
+            "education_expenditure_per_public_expenditure":13.83,
+            "education_expenditure_gdp":5.49,
+            "education_expenditure_per_capita":2035.00
+        },
+           
+        {
+            "year":2005,
+            "country":"Greece",
+            "education_expenditure_per_millions": 7897.9,
+            "education_expenditure_per_public_expenditure":8.70,
+            "education_expenditure_gdp":3.96,
+            "education_expenditure_per_capita":719.00
+        }
+    
+    ];
         
 var datos_EE =  [
     {
@@ -227,6 +337,25 @@ var datos_EE =  [
                 }
             });          
     });
+    
+    app.get(BASE_API_PATH+"/loadInitialDataReduced", (req,res)=>{ 
+        
+        //Cuando llamen a /api/v1/education_expenditures
+        //Debemos enviar el objeto pero pasandolo a JSON
+
+        
+            dataBase.find({}, (error, ee_db)=>{ // Comprobamos si los elementos están
+
+                if(error){
+                    console.log("Se ha producido un error de servdor al hacer petición Get all");
+                    res.sendStatus(500); //Error de servidor
+                }
+                else{
+                    dataBaseReduced.insert(datos_EE_reduced);
+                    res.sendStatus(200);                        
+                }
+            });          
+    });
 
     
 
@@ -234,6 +363,13 @@ var datos_EE =  [
 
     //Get del array completo
     app.get(BASE_API_PATH, (req,res)=>{ 
+        dataBaseReduced.find({}, (error, ee_db)=>{
+            res.status(200).send(JSON.stringify(ee_db,null,2));
+        });
+        
+    });
+
+    app.get(BASE_API_PATH + '/reduced', (req,res)=>{ 
         
         //Cuando llamen a /api/v1/education_expenditures
         //Debemos enviar el objeto pero pasandolo a JSON
