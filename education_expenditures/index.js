@@ -338,7 +338,7 @@ var datos_EE =  [
             });          
     });
     
-    app.get(BASE_API_PATH+"/loadInitialDataReduced", (req,res)=>{ 
+    app.get(BASE_API_PATH+"/reduced/loadInitialDataReduced", (req,res)=>{ 
         
         //Cuando llamen a /api/v1/education_expenditures
         //Debemos enviar el objeto pero pasandolo a JSON
@@ -362,14 +362,14 @@ var datos_EE =  [
     //Generamos las distintas peticiones
 
     //Get del array completo
-    app.get(BASE_API_PATH, (req,res)=>{ 
+    app.get(BASE_API_PATH + '/reduced', (req,res)=>{ 
         dataBaseReduced.find({}, (error, ee_db)=>{
             res.status(200).send(JSON.stringify(ee_db,null,2));
         });
         
     });
 
-    app.get(BASE_API_PATH + '/reduced', (req,res)=>{ 
+    app.get(BASE_API_PATH , (req,res)=>{ 
         
         //Cuando llamen a /api/v1/education_expenditures
         //Debemos enviar el objeto pero pasandolo a JSON

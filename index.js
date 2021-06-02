@@ -16,8 +16,8 @@ app.use(cors());
 
 var dataBase = require("nedb");
 
-var educationExpenditures_DB = new dataBase({filename: path.join(__dirname,"./education_expenditures/dataBaseEdex.db"), autoload: true});
-var educationExpenditures_DB_Reduced = new dataBase({filename: path.join(__dirname,"./education_expenditures/dataBaseEdexReduced.db"), autoload: true});
+var normal = new dataBase({filename: path.join(__dirname,"./education_expenditures/dataBaseEdex.db"), autoload: true});
+var reducida = new dataBase({filename: path.join(__dirname,"./education_expenditures/dataBaseEdexReduced.db"), autoload: true});
 
 //Definimos el puerto al que estará asociado el servidor web
 
@@ -32,7 +32,7 @@ var BASE_API_PATH = "/api/v1";
 // Api Manuel González Regadera - education_expenditures
 
 var education_expenditures_api = require("./education_expenditures");
-education_expenditures_api.register(app,BASE_API_PATH, educationExpenditures_DB, educationExpenditures_DB_Reduced);
+education_expenditures_api.register(app,BASE_API_PATH, normal, reducida);
 
 
 //Ponemos el servidor a escuchar
