@@ -332,6 +332,7 @@ var datos_EE =  [
                     res.sendStatus(500); //Error de servidor
                 }
                 else{
+                    dataBase.remove({}, {multi: true});
                     dataBase.insert(datos_EE);
                     res.sendStatus(200);                        
                 }
@@ -351,6 +352,7 @@ var datos_EE =  [
                     res.sendStatus(500); //Error de servidor
                 }
                 else{
+                    dataBaseReduced.remove({}, {multi: true});
                     dataBaseReduced.insert(datos_EE_reduced);
                     res.sendStatus(200);                        
                 }
